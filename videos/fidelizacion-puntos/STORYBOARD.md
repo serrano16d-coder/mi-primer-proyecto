@@ -15,7 +15,7 @@ Música: sintetizada por código a 120 BPM, y cada cambio de escena cae en un go
 | 6 | 22–26 | Lila | Empieza a **sumar** hoy · botón "Pregunta en tu tienda" · logo TCC | Saluda con la bolsa | Fin |
 
 Pendiente:
-- Logo: poner `assets/logo-tcc.png` (PNG con fondo transparente). Mientras no esté, sale un hueco marcado "LOGO TCC".
+- Logo: poner `assets/logo-tcc.png` (PNG con fondo transparente). Mientras no esté, sale una firma de texto "TCC GLOBAL" provisional (no es el logo oficial).
 - Tipografía: copiar los archivos de Neue Plak a `assets/fonts/` (`NeuePlak-Black|Bold|Regular` en .otf, .ttf o .woff2) y volver a renderizar.
 
 Render: `CHROME_PATH=/opt/pw-browsers/chromium MUSIC_GAIN=0.55 SFX_GAIN=0.45 ./build.sh tcc-fidelizacion-tutorial`

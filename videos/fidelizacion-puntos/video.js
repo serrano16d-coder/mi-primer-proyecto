@@ -115,12 +115,13 @@ export default {
         if (bp > 0) { c.save(); c.translate(540, 680); c.scale(bp, bp); c.fillStyle = BRAND.negro; c.beginPath(); c.roundRect(-330, -58, 660, 116, 58); c.fill();
           L.text(c, 'Pregunta en tu tienda', 0, 20, { font: K.S.type.label(52), color: BRAND.blanco, align: 'center' }); c.restore(); }
         [[170, 900, 0], [930, 860, 1], [200, 1250, 2], [900, 1300, 3]].forEach(([x, y, i]) => { const p = h.A(1.0 + i * 0.12, 0.4); if (p > 0) star(K, x, y + Math.sin(t * 3 + i) * 14, 34 * L.E.back(p), i % 2 ? BRAND.blanco : BRAND.negro, t * 0.5 + i); });
-        // logo: si existe assets/logo-tcc.png se usa; si no, un hueco marcado (no se inventa el logo)
+        // logo: si existe assets/logo-tcc.png se usa; si no, una firma de texto (no se inventa el logo)
         const lp = h.A(1.3, 0.5), img = K.images['assets/logo-tcc.png'];
         if (lp > 0) { c.save(); c.globalAlpha = lp;
           if (img) { const hh = 130, ww = img.width * hh / img.height; c.drawImage(img, 540 - ww / 2, 1720, ww, hh); }
-          else { c.fillStyle = BRAND.blanco; c.beginPath(); c.roundRect(360, 1710, 360, 140, 24); c.fill(); c.setLineDash([14, 10]); c.strokeStyle = BRAND.negro; c.lineWidth = 4; c.stroke();
-            L.text(c, 'LOGO TCC', 540, 1798, { font: K.S.type.label(48), color: BRAND.negro, align: 'center' }); }
+          else { // firma de texto provisional (no es el logo oficial): se sustituye sola al añadir assets/logo-tcc.png
+            L.text(c, 'TCC', 540, 1800, { font: K.S.type.display(96), color: BRAND.negro, align: 'center' });
+            L.text(c, 'GLOBAL', 540, 1850, { font: K.S.type.label(30), color: BRAND.negro, align: 'center', ls: 10 }); }
           c.restore(); }
       },
       actor(t) { return { x: 540, y: 1600, h: 600, pose: { armL: 10, armR: 115 + 18 * Math.sin(t * 11), eyes: 'happy' }, after: (K, m) => bag(K, m.handL[0], m.handL[1], 0.8, 0) }; } },

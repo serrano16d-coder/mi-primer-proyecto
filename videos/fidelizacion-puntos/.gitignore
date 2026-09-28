@@ -4,3 +4,4 @@ stills/
 audio/_*
 sfx.json
 .venv/
+audio/*.wav
